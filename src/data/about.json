@@ -1,0 +1,11 @@
+{
+    "company": {
+        "employees": 7000,
+        "founder": "Elon Musk",
+        "launch_sites": 3,
+        "name": "SpaceX",
+        "summary": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+        "test_sites": 1,
+        "vehicles": 3
+    }
+}

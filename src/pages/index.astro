@@ -2,12 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 
 import Hero from '../components/organisms/Hero/index.vue'
+
 import About from '../components/organisms/About/index.vue'
+import AboutMockup from '../data/about.json'
+
+import Rockets from '../components/organisms/Rockets/index.vue'
+import RocketsMockup from '../data/rockets.json'
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Hero />
-		<About />
+		<About {...AboutMockup} />
+		<Rockets {...RocketsMockup} />
 	</main>
 </Layout>
