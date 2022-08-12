@@ -1,7 +1,6 @@
 <template>
   <section class="relative h-screen bg-black flex justify-center">
     <div id="splash-bg-fallback" class="absolute inset-0 opacity-40">
-      <!-- <HeroImage /> -->
       <VideoWrapper
         src="media/space_background.mp4"
         customClass="w-full h-full object-cover"
