@@ -5,15 +5,64 @@ import Hero from '../components/organisms/Hero/index.vue'
 
 import About from '../components/organisms/About/index.vue'
 import AboutMockup from '../data/about.json'
+const about = await fetch("https://api.spacex.land/graphql/", {
+	method: "POST",
+	headers: { "Content-Type": "application/json" },
+	body: JSON.stringify({
+		query: `
+        {
+          company {
+            employees
+            founder
+            launch_sites
+            name
+            summary
+            test_sites
+            vehicles
+            links {
+              website
+              twitter
+            }
+          }
+        }
+        `,
+	}),
+});
+const aboutJson = await about.json();
 
 import Rockets from '../components/organisms/Rockets/index.vue'
 import RocketsMockup from '../data/rockets.json'
+const rocket = await fetch("https://api.spacex.land/graphql/", {
+	method: "POST",
+	headers: { "Content-Type": "application/json" },
+	body: JSON.stringify({
+		query: `
+        {
+			rockets {
+				id
+				first_flight
+				name
+				wikipedia
+				description
+			}
+		}
+        `,
+	}),
+});
+const rocketsJson = await rocket.json();
+
+
+const aboutData = aboutJson.data;
+const rocketsData = rocketsJson.data;
+
+/* console.log(aboutData);
+console.log(rocketsData); */
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Hero />
-		<About {...AboutMockup} />
-		<Rockets {...RocketsMockup} />
+		<About {...aboutData} />
+		<Rockets title={RocketsMockup.title} description={RocketsMockup.description} rockets={rocketsData.rockets} />
 	</main>
 </Layout>

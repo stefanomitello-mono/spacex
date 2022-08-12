@@ -1,7 +1,7 @@
 
 {
-    "title": "titolo",
-    "description": "qualcosa",
+    "title": "MAKING HISTORY",
+    "description": "SpaceX’s family of Falcon launch vehicles are the first and only orbital class rockets capable of reflight. Depending on the performance required for the mission, Falcon lands on one of our autonomous spaceport droneships out on the ocean or one of our landing zones near our launch pads.",
     "rockets": [
         {
             "id": "falcon1",

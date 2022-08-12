@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import SingleRocket from '../components/organisms/SingleRocket/index.vue'
+
+const rocket = await fetch("https://api.spacex.land/graphql/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        {
+            rocket(id: "falconheavy") {
+                id
+                boosters
+                cost_per_launch
+                description
+                name
+                type
+                wikipedia
+                first_flight
+                diameter {
+                    meters
+                }
+                active
+            }
+        }
+        `,
+    }),
+});
+const rocketJson = await rocket.json();
+const rocketData = rocketJson.data;
+console.log(rocketData)
+
+---
+
+<Layout title="Welcome to Astro.">
+    <main>
+        <SingleRocket {...rocketData.rocket} />
+    </main>
+</Layout>
