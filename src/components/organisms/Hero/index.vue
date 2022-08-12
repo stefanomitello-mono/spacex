@@ -12,7 +12,7 @@
 
     <div class="container relative mx-auto flex items-center justify-center">
       <ImageWrapper
-        class="absolute -z-1 max-w-lg hidden md:block"
+        class="absolute -z-1 max-w-lg hidden md:block scale-up-center"
         :image="astro"
       />
 
@@ -38,4 +38,33 @@ const astro = {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.scale-up-center {
+  -webkit-animation: scale-up-center 3s linear infinite alternate-reverse both;
+  animation: scale-up-center 3s linear infinite alternate-reverse both;
+}
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+}
+</style>
