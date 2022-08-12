@@ -1,6 +1,6 @@
 <template>
-  <section class="rocket relative h-screen bg-black flex justify-center">
-    <div class="absolute inset-0">
+  <section class="rocket relative bg-black flex justify-center">
+    <div class="hidden md:block absolute inset-0">
       <VideoWrapper
         :src="videoSrc"
         customClass="w-full h-full object-cover"
@@ -11,10 +11,20 @@
     </div>
 
     <div
-      class="container max-w-5xl relative mx-auto flex items-center justify-center text-white"
+      class="container max-w-5xl relative mx-auto flex items-center justify-center text-white md:h-screen"
     >
       <div class="flex flex-col">
-        <div class="mx-auto flex flex-wrap">
+        <div class="md:hidden overflow-hidden h-[50vh] mt-5">
+          <VideoWrapper
+            :src="videoSrc"
+            customClass="w-full object-cover h-full"
+            muted
+            autoplay
+            loop
+          />
+        </div>
+
+        <div class="mx-auto px-3 flex flex-wrap">
           <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
             <h2 class="text-sm title-font text-gray-300 tracking-widest">
               SpaceX
