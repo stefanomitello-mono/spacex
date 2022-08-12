@@ -1,10 +1,6 @@
 <template>
   <div class="logo">
-    <ImageWrapper
-      src="https://upload.wikimedia.org/wikipedia/commons/9/96/SpaceX_Logo_Black.png"
-      alt="logo"
-      :class="[{ invert: props.white }]"
-    />
+    <ImageWrapper :image="logo" :class="[{ invert: props.white }]" />
   </div>
 </template>
 
@@ -15,8 +11,12 @@ import ImageWrapper from "../ImageWrapper/index.vue";
 export interface Props {
   white: boolean;
 }
-
 const props = defineProps<Props>();
+
+const logo = {
+  src: "https://upload.wikimedia.org/wikipedia/commons/9/96/SpaceX_Logo_Black.png",
+  alt: "logo",
+};
 </script>
 
 <style scoped></style>
