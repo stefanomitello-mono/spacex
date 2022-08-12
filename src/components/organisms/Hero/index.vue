@@ -45,8 +45,8 @@ const astro = {
 }
 @-webkit-keyframes scale-up-center {
   0% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
     transform-origin: 50% 100%;
   }
   100% {
@@ -57,8 +57,8 @@ const astro = {
 }
 @keyframes scale-up-center {
   0% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
     transform-origin: 50% 100%;
   }
   100% {
