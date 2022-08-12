@@ -26,7 +26,7 @@
         />
       </div>
     </div>
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container max-w-5xl px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4 text-center">
         <Counter :to="company.employees" label="employees" />
         <Counter :to="company.launch_sites" label="launch sites" />
